@@ -1,0 +1,455 @@
+
+/* ========================================
+   INÍCIO DO CARDÁPIO
+======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.inicio-cardapio {
+    text-align: center;
+    padding: 65px 20px 55px;
+    background-color: #e8c49f;
+}
+
+.subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #814c35;
+}
+
+.inicio-cardapio h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #3b2316;
+    margin: 30px 0 20px;
+}
+
+.linha-decorativa {
+    width: 65px;
+    height: 1px;
+    background-color: #814c35;
+    margin: 0 auto 20px;
+}
+
+.inicio-cardapio p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #594a47;
+}
+
+.explore {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 12px 25px;
+    border: 1px solid #814c35;
+    border-radius: 30px;
+    color: #814c35;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.explore:hover {
+    background-color: #512615;
+    color: #ffffff;
+    border-color: #512615;
+}
+
+.seta {
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.explore:hover .seta {
+    transform: translateY(4px);
+}
+
+
+/* ========================================
+   SEÇÃO DO CARDÁPIO
+======================================== */
+
+.cafes {
+    background-color: #e8c49f;
+    padding: 65px 8%;
+}
+
+.titulo-categoria {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-categoria > span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #814c35;
+}
+
+.titulo-categoria h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: #3b2316;
+    margin: 12px 0;
+}
+
+.titulo-categoria p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #594a47;
+}
+
+
+/* ========================================
+   GRUPOS DE PRODUTOS
+======================================== */
+
+.grupo-cafes,
+.grupo-sucos,
+.grupo-salgados,
+.grupo-confeitaria {
+    margin-bottom: 45px;
+}
+
+.grupo-cafes > h3,
+.grupo-sucos > h3,
+.grupo-salgados > h3,
+.grupo-confeitaria > h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #814c35;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #814c35;
+    padding-bottom: 10px;
+}
+
+
+/* ========================================
+   ORGANIZAÇÃO DOS CARDS
+======================================== */
+
+.lista-cafes,
+.lista-sucos,
+.lista-salgados,
+.lista-confeitaria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    position: relative;
+    isolation: isolate;
+}
+
+
+/* ========================================
+   ESTRUTURA FLIP CARD
+======================================== */
+
+.flip-card {
+    width: 100%;
+    height: 230px;
+    min-width: 0;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    transition: transform 0.3s ease;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+
+/* ANIMAÇÃO AO PASSAR O MOUSE */
+
+@media (hover: hover) and (pointer: fine) {
+    .flip-card:hover {
+        transform: translateY(-4px);
+        z-index: 2;
+    }
+
+    .flip-card:hover .flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card:hover .imagem-produto {
+        transform: scale(1.08);
+    }
+}
+
+
+/* CLIQUE OU TOQUE */
+
+.flip-card.virado .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card:focus-visible {
+    outline: 3px solid #512615;
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+
+/* ========================================
+   FRENTE E VERSO
+======================================== */
+
+.frente,
+.verso {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* ========================================
+   FRENTE - FOTOGRAFIA
+======================================== */
+
+.frente {
+    isolation: isolate;
+    background-color: #814c35;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.imagem-produto {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.frente::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        to top,
+        rgba(35, 19, 12, 0.88) 0%,
+        rgba(35, 19, 12, 0.25) 65%,
+        rgba(35, 19, 12, 0.08) 100%
+    );
+}
+
+.frente h4,
+.frente span {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.frente h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: auto;
+}
+
+.frente span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 8px;
+}
+
+
+/* ========================================
+   PRODUTOS SEM IMAGEM
+======================================== */
+
+.frente.sem-imagem {
+    background: linear-gradient(
+        145deg,
+        #814c35,
+        #3b2316
+    );
+}
+
+
+/* ========================================
+   VERSO - DESCRIÇÃO E PREÇO
+======================================== */
+
+.verso {
+    background-color: #594a47;
+    color: #ffffff;
+    padding: 25px 20px;
+    transform: rotateY(180deg);
+    border: 1px solid #814c35;
+}
+
+.verso h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    font-weight: 500;
+    color: #e8c49f;
+    margin-bottom: 14px;
+}
+
+.verso p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #ffffff;
+}
+
+.verso .preco {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #e8c49f;
+    margin-top: 18px;
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 900px) {
+
+    .cafes {
+        padding: 55px 6%;
+    }
+
+    .lista-cafes,
+    .lista-sucos,
+    .lista-salgados,
+    .lista-confeitaria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .flip-card {
+        height: 220px;
+    }
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 550px) {
+
+    .inicio-cardapio {
+        padding: 50px 18px;
+    }
+
+    .inicio-cardapio h1 {
+        font-size: 38px;
+    }
+
+    .inicio-cardapio p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .explore {
+        font-size: 10px;
+    }
+
+    .cafes {
+        padding: 45px 20px;
+    }
+
+    .titulo-categoria {
+        margin-bottom: 35px;
+    }
+
+    .titulo-categoria h2 {
+        font-size: 34px;
+    }
+
+    .titulo-categoria p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .grupo-cafes > h3,
+    .grupo-sucos > h3,
+    .grupo-salgados > h3,
+    .grupo-confeitaria > h3 {
+        font-size: 27px;
+    }
+
+    .lista-cafes,
+    .lista-sucos,
+    .lista-salgados,
+    .lista-confeitaria {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        justify-items: center;
+    }
+
+    .flip-card {
+        width: 100%;
+        max-width: 340px;
+        height: 230px;
+    }
+
+    .verso {
+        padding: 20px;
+    }
+
+    .verso p {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   ACESSIBILIDADE: REDUZIR ANIMAÇÕES
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .flip-inner,
+    .imagem-produto,
+    .flip-card,
+    .explore,
+    .seta {
+        transition: none;
+    }
+}

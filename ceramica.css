@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --fundo: #f3eee7;
+  --papel: #fbf8f3;
+  --texto: #332820;
+  --marrom: #76523d;
+  --argila: #b8795d;
+  --linha: #ded2c5;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: 'DM Sans', sans-serif; }
+.topo { min-height: 78px; padding: 18px 7%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--linha); }
+.marca { color: var(--texto); text-decoration: none; font-size: 13px; letter-spacing: 3px; font-weight: 600; }
+.marca span { color: var(--argila); }
+nav { display: flex; gap: 28px; }
+nav a { color: var(--texto); text-decoration: none; font-size: 12px; }
+nav a:hover, .link-destaque:hover { color: var(--argila); }
+.hero { min-height: 440px; padding: 100px 8% 80px; background: var(--papel); }
+.etiqueta, .numero { color: var(--argila); font-size: 10px; letter-spacing: 3px; font-weight: 600; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+.hero h1 { font-size: clamp(46px, 7vw, 82px); line-height: 1.08; margin: 22px 0; }
+.hero h1 em { color: var(--argila); }
+.hero > p:not(.etiqueta) { color: #776b61; max-width: 440px; line-height: 1.8; font-size: 14px; }
+.link-destaque { display: inline-block; margin-top: 26px; color: var(--texto); text-decoration: none; font-size: 10px; letter-spacing: 2px; border-bottom: 1px solid var(--argila); padding-bottom: 8px; }
+.colecao, .ideias { padding: 85px 7%; }
+.cabecalho-secao { text-align: center; }
+.cabecalho-secao h2, .processo h2, .ideias h2 { font-size: clamp(34px, 4vw, 48px); margin: 12px 0; }
+.cabecalho-secao > p:last-child { color: #776b61; font-size: 13px; }
+.filtros { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 35px 0; }
+.filtro { border: 1px solid var(--linha); background: transparent; padding: 10px 18px; border-radius: 30px; color: var(--texto); cursor: pointer; font: inherit; font-size: 11px; }
+.filtro:hover, .filtro.ativo { background: var(--texto); color: white; border-color: var(--texto); }
+.grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px 22px; }
+.produto { background: var(--papel); transition: transform .25s ease; }
+.produto:hover { transform: translateY(-5px); }
+.imagem-vazia { min-height: 250px; display: grid; place-items: center; background: #e7ddd1; color: #9b8878; letter-spacing: 2px; font-size: 9px; }
+.info { padding: 18px 20px 22px; }
+.numero { font-size: 9px; letter-spacing: 2px; }
+.info h3 { font-size: 25px; margin: 8px 0; }
+.info > p:last-child { color: #776b61; font-size: 12px; line-height: 1.7; }
+.processo { background: #dfcabb; padding: 80px 8%; }
+.processo h2 { margin-bottom: 42px; }
+.etapas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+.etapas div { border-top: 1px solid #b99a84; padding-top: 18px; }
+.etapas span { color: var(--argila); font-size: 11px; }
+.etapas h3 { font-size: 25px; margin: 12px 0 8px; }
+.etapas p, .ideias li { color: #66584e; font-size: 13px; line-height: 1.8; }
+.ideias { background: var(--papel); }
+.ideias ul { max-width: 700px; padding-left: 20px; }
+footer { padding: 35px 7%; background: #332820; color: #f3eee7; }
+footer span { letter-spacing: 3px; font-size: 11px; }
+footer p { color: #c9b9aa; font-size: 12px; }
+@media (max-width: 760px) {
+  .topo { align-items: flex-start; gap: 18px; flex-direction: column; }
+  nav { gap: 18px; flex-wrap: wrap; }
+  .hero { padding: 75px 7%; }
+  .grade { grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
+  .imagem-vazia { min-height: 190px; }
+  .etapas { grid-template-columns: 1fr; gap: 22px; }
+}
+@media (max-width: 480px) {
+  .grade { grid-template-columns: 1fr; }
+  .imagem-vazia { min-height: 230px; }
+}
+
+/* CABEÇALHO */
+
+header {
+    width: 100%;
+    background-color: #e8c49f;
+    padding: 15px 0;
+}
+
+.caixa {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-img {
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3b2316;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #814c35;
+}

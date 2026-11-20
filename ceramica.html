@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cerâmica Artesanal | La Crème Café</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="ceramica.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="js/ceramica.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+        <div class="caixa">
+
+            <a href="home.html">
+                <img src="./img/La Crème Café.png" alt="La Crème Café" class="logo-img">
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="conheca.html">Conheça</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="ceramica.html">Cerâmica</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+        <section class="hero">
+
+            <p class="etiqueta">FEITO À MÃO • PEÇAS AUTORAIS</p>
+
+            <h1>
+                Pequenos detalhes,<br>
+                <em>grandes histórias.</em>
+            </h1>
+
+            <p>Uma coleção de cerâmicas que une formas, texturas e personalidade.</p>
+
+            <a class="link-destaque" href="#colecao">
+                EXPLORAR COLEÇÃO ↓
+            </a>
+
+        </section>
+
+
+        <!-- COLEÇÃO -->
+
+        <section class="colecao" id="colecao">
+
+            <div class="cabecalho-secao">
+
+                <p class="etiqueta">EXPLORE AS PEÇAS</p>
+
+                <h2>Coleção artesanal</h2>
+
+                <p>Escolha uma categoria e descubra possibilidades para cada peça.</p>
+
+            </div>
+
+
+            <div class="filtros">
+
+                <button class="filtro ativo" data-filtro="todos">Todas</button>
+
+                <button class="filtro" data-filtro="mesa">Mesa posta</button>
+
+                <button class="filtro" data-filtro="decoracao">Decoração</button>
+
+                <button class="filtro" data-filtro="bebidas">Para bebidas</button>
+
+            </div>
+
+
+            <div class="grade">
+
+                <article class="produto" data-categoria="bebidas">
+
+                    <div class="imagem-vazia">
+                        <span>ADICIONE UMA FOTO</span>
+                    </div>
+
+                    <div class="info">
+                        <p class="numero">01 / XÍCARAS</p>
+                        <h3>Xícaras</h3>
+                        <p>Peças para transformar a pausa do café em um ritual especial.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="produto" data-categoria="mesa">
+
+                    <div class="imagem-vazia">
+                        <span>ADICIONE UMA FOTO</span>
+                    </div>
+
+                    <div class="info">
+                        <p class="numero">02 / PRATOS</p>
+                        <h3>Pratos</h3>
+                        <p>Formatos e acabamentos que dão personalidade à mesa.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="produto" data-categoria="mesa">
+
+                    <div class="imagem-vazia">
+                        <span>ADICIONE UMA FOTO</span>
+                    </div>
+
+                    <div class="info">
+                        <p class="numero">03 / CUMBUCAS</p>
+                        <h3>Cumbucas</h3>
+                        <p>Versáteis para servir, compartilhar e decorar.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="produto" data-categoria="decoracao">
+
+                    <div class="imagem-vazia">
+                        <span>ADICIONE UMA FOTO</span>
+                    </div>
+
+                    <div class="info">
+                        <p class="numero">04 / VASOS</p>
+                        <h3>Vasos</h3>
+                        <p>Volumes orgânicos para trazer aconchego ao ambiente.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="produto" data-categoria="bebidas">
+
+                    <div class="imagem-vazia">
+                        <span>ADICIONE UMA FOTO</span>
+                    </div>
+
+                    <div class="info">
+                        <p class="numero">05 / CANECAS</p>
+                        <h3>Canecas</h3>
+                        <p>Peças únicas para acompanhar os momentos do dia.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="produto" data-categoria="decoracao">
+
+                    <div class="imagem-vazia">
+                        <span>ADICIONE UMA FOTO</span>
+                    </div>
+
+                    <div class="info">
+                        <p class="numero">06 / OBJETOS</p>
+                        <h3>Peças decorativas</h3>
+                        <p>Esculturas e objetos que valorizam os pequenos detalhes.</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESSO DE PRODUÇÃO -->
+
+        <section class="processo" id="processo">
+
+            <p class="etiqueta">DO BARRO À PEÇA</p>
+
+            <h2>A beleza está no processo.</h2>
+
+            <div class="etapas">
+
+                <div>
+                    <span>01</span>
+                    <h3>Modelagem</h3>
+                    <p>A forma começa a ganhar vida pelas mãos de quem cria.</p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <h3>Acabamento</h3>
+                    <p>Texturas, relevos e detalhes dão identidade à peça.</p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <h3>Queima</h3>
+                    <p>O calor transforma a argila em uma peça resistente.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IDEIAS -->
+
+        <section class="ideias" id="ideias">
+
+            <p class="etiqueta">IDEIAS PARA SUA COLEÇÃO</p>
+
+            <h2>Experimente novas possibilidades.</h2>
+
+            <ul>
+                <li>Conjunto de café com xícara, pires e colher.</li>
+                <li>Pratos com bordas irregulares e esmalte em dois tons.</li>
+                <li>Vasos com formas orgânicas e acabamento fosco.</li>
+                <li>Canecas com alças diferentes e detalhes em relevo.</li>
+                <li>Cumbucas empilháveis para montar conjuntos.</li>
+                <li>Peças decorativas inspiradas em formas da natureza.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>La Crème Café</p>
+
+        <span>Peças feitas com tempo, cuidado e criatividade.</span>
+
+    </footer>
+
+</body>
+</html>
